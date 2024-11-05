@@ -1,0 +1,42 @@
+[
+    {
+        "id":1,
+        "title": "Vicks-cough-medicine",
+        "description": "This is the first project description.",
+        "img": "vicks-Logo.png",
+        "code":"HTML,CSS,Js",
+        "link": "https://sandhyavsuresh.github.io/vicks-cough-medicine/"
+    },
+    {
+        "id":2,
+        "title": "Groceyish-grocery",
+        "description": "This is the second project description.",
+        "img": "grocery.png",
+        "code":"HTML,CSS,Js",
+        "link": "https://groceyish-grocery-omega.vercel.app/"
+    },
+    {
+        "id":3,
+        "title": "Travel",
+        "description": "This is the third project description.",
+        "img": "travel.png",
+        "code":"HTML,CSS,React js",
+        "link": "https://travel-guide-project-react.netlify.app/"
+    },
+    {
+        "id":4,
+        "title": "YouTube-Clone",
+        "description": "This is the third project description.",
+        "img": "youtubeLogo.png",
+        "code":"HTML,CSS,React js",
+        "link": "https://you-tube-clone-alpha-three.vercel.app/"
+    },
+    {
+        "id":5,
+        "title": "Euphoria",
+        "description": "This is the third project description.",
+        "img": "Logo.jpg",
+        "code":"HTML,CSS,React js",
+        "link": "https://euphoria-react-gray.vercel.app/"
+    }
+]
