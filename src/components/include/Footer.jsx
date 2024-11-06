@@ -10,7 +10,7 @@ justify-content:space-between;
 align-items:center;
 color:#fff;
 background: linear-gradient(91.7deg, rgb(50, 25, 79) -4.3%, rgb(122, 101, 149) 101.8%);
-@media(max-width:400px){
+@media(max-width:550px){
 display:flex;
 flex-direction:column;
 gap:.5rem;
@@ -27,6 +27,9 @@ const LinksImg = styled.div`
 width:10%;
 display:flex;
 justify-content:space-around;
+@media(max-width:550px){
+width:60%;
+}
 @media(max-width:400px){
 width:80%;
 }

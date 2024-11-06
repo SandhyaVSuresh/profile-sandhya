@@ -31,10 +31,14 @@ const HeadH2 = styled.h2`
 
 const ProjectDiv = styled.div`
   padding-bottom: 10px;
+    @media (max-width: 464px) {
+    margin:auto;
+  }
 `;
 
 const ProjectItems = styled.div`
   margin: 20px 10px;
+  // margin:auto;
   background-color: #e3dbec;
   padding: 5%;
   border-radius: 10px;
@@ -50,6 +54,15 @@ const ProjectItems = styled.div`
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(121, 45, 129, 0.3);
+  }
+    @media (max-width: 464px) {
+    margin:20px 7.5%;
+  }
+    @media (max-width: 375px) {
+    margin:20px 5.5%;
+  }
+    @media (max-width: 350px) {
+    margin:20px 0;
   }
 `;
 
@@ -100,6 +113,10 @@ const ProjectLink = styled(Link)`
 
 const SlideDiv = styled(Carousel)`
 padding:10px 8%;
+    @media (max-width: 464px) {
+    margin:auto;
+    width:90%;
+  }
 `;
 
 const responsive = {
