@@ -244,13 +244,8 @@ function Navbar() {
         "pM-zD9LAxs6NPJEim"
       )
       .then(() => {
-        
         alert("Message sent successfully!");
         clearFun();
-      })
-      .catch(() => {
-        console.error("EmailJS Error:", error);
-        alert("Failed to send message. Please try again later.");
       });
   };
 
@@ -334,9 +329,7 @@ function Navbar() {
                   />
                 </ContactDeatis>
                 <SendButtonWrapper>
-                  <SendButton type="submit">
-                    Send
-                  </SendButton>
+                  <SendButton type="submit">Send</SendButton>
                 </SendButtonWrapper>
               </form>
             </SubContainer>
