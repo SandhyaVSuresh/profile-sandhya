@@ -281,7 +281,7 @@ function Navbar() {
           <Menuli>
             <DownloadButton
               href="../assets/CV/sandhyavsuresh.pdf"
-              download="Sandhya_VSuresh_CV"
+              download="Sandhya_VSuresh_CV.pdf"
             >
               Download CV
             </DownloadButton>
