@@ -18,6 +18,10 @@ const Heading = styled.h1`
   @media (max-width: 768px) {
     font-size: 2rem;
   }
+    @media (max-width: 400px) {
+    font-size: 1.7rem;
+  margin-bottom: .9rem;
+  }
 `;
 
 const Paragraph = styled.p`
@@ -156,7 +160,7 @@ function About() {
                 <CollegeName>{item.college}</CollegeName>
                 {/* <Marks>{item.marks}</Marks> */}
                 <div
-                  className="radial-progress text-neutral-content"
+                  className="radial-progress text-purple-900"
                   style={{ "--value": item.marks }}
                   role="progressbar"
                 >
