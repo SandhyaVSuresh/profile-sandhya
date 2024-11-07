@@ -18,9 +18,9 @@ const Heading = styled.h1`
   @media (max-width: 768px) {
     font-size: 2rem;
   }
-    @media (max-width: 400px) {
+  @media (max-width: 400px) {
     font-size: 1.7rem;
-  margin-bottom: .9rem;
+    margin-bottom: 0.9rem;
   }
 `;
 
@@ -56,6 +56,7 @@ const HeadingDiv = styled.div`
 const Headh3 = styled.h3`
   color: #4b0082;
   font-size: 2rem;
+  margin-bottom: 1rem;
 
   @media (max-width: 768px) {
     font-size: 1.5rem;
@@ -68,7 +69,16 @@ const ContentDiv = styled.div`
   flex-direction: column;
   gap: 1.5rem;
 `;
-
+const ContentDivCer = styled.div`
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  gap: 1rem;
+  @media (max-width: 500px) {
+    grid-template-columns: 1fr;
+  }
+`;
 const DetailsDiv = styled.div`
   padding-left: 20px;
   display: flex;
@@ -90,10 +100,25 @@ const CollegeName = styled.p`
   color: #5f4b8b;
 `;
 
-// const Marks = styled.p`
-//   font-size: 0.9rem;
-//   color: #5f4b8b;
-// `;
+const DetailsDivCer = styled.div`
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: #fff;
+  padding: 2%;
+  border-radius: 8px;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+`;
+
+const CerLink = styled.a`
+  font-size: 0.9rem;
+  color: #5f4b8b;
+  text-decoration: underline;
+  margin-bottom: 0.5rem;
+`;
 
 const Skillul = styled.ul`
   padding-left: 30px;
@@ -118,6 +143,22 @@ const Spanp = styled.span`
   font-weight: 600;
 `;
 
+const ProjectPreview = styled.div`
+  width: 40%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 1rem;
+`;
+
+const ProjectFrame = styled.img`
+  border: none;
+`;
+
 function About() {
   const edu = [
     {
@@ -137,6 +178,21 @@ function About() {
     },
   ];
 
+  const cer = [
+    {
+      name: "Progressive Web Apps from Steyp",
+      cerLink: "/Certificate/Sandhya VSureshPWA.png",
+    },
+    {
+      name: "Python - Complete Python Course from Steyp",
+      cerLink: "/Certificate/Sandhya VSureshPython.png",
+    },
+    {
+      name: "React: Complete Development Guide from Steyp",
+      cerLink: "/Certificate/Sandhya VSureshReact.png",
+    },
+  ];
+
   return (
     <>
       <Navbar />
@@ -149,6 +205,7 @@ function About() {
           effectively in collaborative <br />
           environments and continuously growing in my field.
         </Paragraph>
+
         <Section>
           <HeadingDiv>
             <Headh3>Education</Headh3>
@@ -158,7 +215,6 @@ function About() {
               <DetailsDiv key={index}>
                 <DegreeName>{item.degree}</DegreeName>
                 <CollegeName>{item.college}</CollegeName>
-                {/* <Marks>{item.marks}</Marks> */}
                 <div
                   className="radial-progress text-purple-900"
                   style={{ "--value": item.marks }}
@@ -170,6 +226,7 @@ function About() {
             ))}
           </ContentDiv>
         </Section>
+
         <Section>
           <HeadingDiv>
             <Headh3>Skills</Headh3>
@@ -196,6 +253,26 @@ function About() {
               </Skillli>
             </Skillul>
           </ContentDiv>
+        </Section>
+
+        <Section>
+          <HeadingDiv>
+            <Headh3>Certificate</Headh3>
+          </HeadingDiv>
+          <ContentDivCer>
+            {cer.map((item, index) => (
+              <DetailsDivCer key={index}>
+                <DegreeName>{item.name}</DegreeName>
+                <CerLink href={item.cerLink}>View Certificate</CerLink>
+                <ProjectPreview>
+                  <ProjectFrame
+                    src={item.cerLink}
+                    title="Certificate Preview"
+                  />
+                </ProjectPreview>
+              </DetailsDivCer>
+            ))}
+          </ContentDivCer>
         </Section>
       </Container>
       <Footer />
