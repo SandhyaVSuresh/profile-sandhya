@@ -116,32 +116,43 @@ const DetailsDivCer = styled.div`
 const CerLink = styled.a`
   font-size: 0.9rem;
   color: #5f4b8b;
-  text-decoration: underline;
+  text-decoration: none;
   margin-bottom: 0.5rem;
 `;
 
 const Skillul = styled.ul`
   padding-left: 30px;
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
+  flex-wrap:wrap;
   gap: 0.8rem;
 `;
 
 const Skillli = styled.li`
-  color: #4b0082;
+  // color: #4b0082;
+  color:#fff;
+  font-weight:800;
+  border-radius:100%;
   font-size: 1.1rem;
+  width:100px;
+  height:100px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:auto;
+  background: linear-gradient(91.7deg, rgb(50, 25, 79) -4.3%, rgb(122, 101, 149) 101.8%);
 
   @media (max-width: 768px) {
     font-size: 1rem;
   }
 `;
 
-const Spanp = styled.span`
-  color: #4b0082;
-  font-size: 1rem;
-  margin-right: 1rem;
-  font-weight: 600;
-`;
+// const Spanp = styled.span`
+//   color: #4b0082;
+//   font-size: 1rem;
+//   margin-right: 1rem;
+//   font-weight: 600;
+// `;
 
 const ProjectPreview = styled.div`
   width: 40%;
@@ -234,22 +245,28 @@ function About() {
           <ContentDiv>
             <Skillul>
               <Skillli>
-                <Spanp>→</Spanp> HTML
+                {/* <Spanp>→</Spanp>  */}
+                HTML
               </Skillli>
               <Skillli>
-                <Spanp>→</Spanp> CSS
+                {/* <Spanp>→</Spanp>  */}
+                CSS
               </Skillli>
               <Skillli>
-                <Spanp>→</Spanp> React JS
+                {/* <Spanp>→</Spanp>  */}
+                React JS
               </Skillli>
               <Skillli>
-                <Spanp>→</Spanp> SASS
+                {/* <Spanp>→</Spanp> */}
+                 SASS
               </Skillli>
               <Skillli>
-                <Spanp>→</Spanp> Python
+                {/* <Spanp>→</Spanp> */}
+                 Python
               </Skillli>
               <Skillli>
-                <Spanp>→</Spanp> Flask
+                {/* <Spanp>→</Spanp> */}
+                 Flask
               </Skillli>
             </Skillul>
           </ContentDiv>
