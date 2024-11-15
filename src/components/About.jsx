@@ -168,13 +168,6 @@ const Skillli = styled.li`
   }
 `;
 
-// const Spanp = styled.span`
-//   color: #4b0082;
-//   font-size: 1rem;
-//   margin-right: 1rem;
-//   font-weight: 600;
-// `;
-
 const ProjectPreview = styled.div`
   width: 40%;
   height: fit-content;
