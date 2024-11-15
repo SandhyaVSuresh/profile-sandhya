@@ -1,6 +1,7 @@
 import Footer from "./include/Footer";
 import Navbar from "./include/Navbar";
 import styled from "styled-components";
+import { useState } from "react";
 
 const Container = styled.div`
   background-color: #fff;
@@ -37,6 +38,8 @@ const Section = styled.div`
   padding: 30px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: #e3dbec;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -48,15 +51,26 @@ const Section = styled.div`
 `;
 
 const HeadingDiv = styled.div`
+  gap: 0.5rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  padding-bottom: 20px;
+  width: 100%;
 `;
-
+const LineDiv = styled.div`
+  width: 10px;
+  height: 45px;
+  border-radius: 15px;
+  background: linear-gradient(
+    76.8deg,
+    rgb(121, 45, 129) 3.6%,
+    rgb(36, 31, 98) 90.4%
+  );
+`;
 const Headh3 = styled.h3`
   color: #4b0082;
   font-size: 2rem;
-  margin-bottom: 1rem;
+  font-weight: 800;
 
   @media (max-width: 768px) {
     font-size: 1.5rem;
@@ -64,9 +78,12 @@ const Headh3 = styled.h3`
 `;
 
 const ContentDiv = styled.div`
+  width: 100%;
   margin-top: 20px;
   display: flex;
   flex-direction: column;
+  // align-items:center;
+  // justify-content: center;
   gap: 1.5rem;
 `;
 const ContentDivCer = styled.div`
@@ -124,23 +141,27 @@ const Skillul = styled.ul`
   padding-left: 30px;
   display: flex;
   // flex-direction: column;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   gap: 0.8rem;
 `;
 
 const Skillli = styled.li`
   // color: #4b0082;
-  color:#fff;
-  font-weight:800;
-  border-radius:100%;
+  color: #fff;
+  font-weight: 800;
+  border-radius: 100%;
   font-size: 1.1rem;
-  width:100px;
-  height:100px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin:auto;
-  background: linear-gradient(91.7deg, rgb(50, 25, 79) -4.3%, rgb(122, 101, 149) 101.8%);
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  background: linear-gradient(
+    91.7deg,
+    rgb(50, 25, 79) -4.3%,
+    rgb(122, 101, 149) 101.8%
+  );
 
   @media (max-width: 768px) {
     font-size: 1rem;
@@ -170,7 +191,30 @@ const ProjectFrame = styled.img`
   border: none;
 `;
 
+const Pagination = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+
+  button {
+    padding: 0.5rem 1rem;
+    background-color: #4b0082;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:disabled {
+      background-color: #ddd;
+      // cursor: not-allowed;
+    }
+  }
+`;
+
+const CertificatesPerPage = 2;
 function About() {
+  const [currentPage, setCurrentPage] = useState(1);
   const edu = [
     {
       degree: "Master of Computer Application",
@@ -202,8 +246,27 @@ function About() {
       name: "React: Complete Development Guide from Steyp",
       cerLink: "/Certificate/Sandhya VSureshReact.png",
     },
+    {
+      name: "Cybersecurity Essentials - Cisco Networking Academy",
+      cerLink: "/Certificate/Cyber.jpg",
+    },
+    {
+      name: "PHP and MySQL - IIT Bombay",
+      cerLink: "/Certificate/php.jpg",
+    },
+    {
+      name: "Programming Essentials in Python - Cisco Networking Academy",
+      cerLink: "/Certificate/pythonCisco.jpg",
+    },
   ];
+const totalPages = Math.ceil(cer.length / CertificatesPerPage);
 
+const startIndex = (currentPage - 1) * CertificatesPerPage;
+const currentItems = cer.slice(startIndex, startIndex + CertificatesPerPage);
+
+const handlePageChange = (pageNumber) => {
+  setCurrentPage(pageNumber);
+};
   return (
     <>
       <Navbar />
@@ -219,6 +282,7 @@ function About() {
 
         <Section>
           <HeadingDiv>
+            <LineDiv></LineDiv>
             <Headh3>Education</Headh3>
           </HeadingDiv>
           <ContentDiv>
@@ -240,56 +304,51 @@ function About() {
 
         <Section>
           <HeadingDiv>
+            <LineDiv></LineDiv>
             <Headh3>Skills</Headh3>
           </HeadingDiv>
           <ContentDiv>
             <Skillul>
-              <Skillli>
-                {/* <Spanp>→</Spanp>  */}
-                HTML
-              </Skillli>
-              <Skillli>
-                {/* <Spanp>→</Spanp>  */}
-                CSS
-              </Skillli>
-              <Skillli>
-                {/* <Spanp>→</Spanp>  */}
-                React JS
-              </Skillli>
-              <Skillli>
-                {/* <Spanp>→</Spanp> */}
-                 SASS
-              </Skillli>
-              <Skillli>
-                {/* <Spanp>→</Spanp> */}
-                 Python
-              </Skillli>
-              <Skillli>
-                {/* <Spanp>→</Spanp> */}
-                 Flask
-              </Skillli>
+              <Skillli>HTML</Skillli>
+              <Skillli>CSS</Skillli>
+              <Skillli>Bootstrap</Skillli>
+              <Skillli>React JS</Skillli>
+              <Skillli>SASS</Skillli>
+              <Skillli>SQL</Skillli>
+              <Skillli>Python</Skillli>
+              <Skillli>Flask</Skillli>
             </Skillul>
           </ContentDiv>
         </Section>
 
         <Section>
           <HeadingDiv>
+            <LineDiv></LineDiv>
             <Headh3>Certificate</Headh3>
           </HeadingDiv>
           <ContentDivCer>
-            {cer.map((item, index) => (
+            {currentItems.map((item, index) => (
               <DetailsDivCer key={index}>
                 <DegreeName>{item.name}</DegreeName>
                 <CerLink href={item.cerLink}>View Certificate</CerLink>
                 <ProjectPreview>
-                  <ProjectFrame
-                    src={item.cerLink}
-                    title="Certificate Preview"
-                  />
+                  <ProjectFrame src={item.cerLink} title="Certificate Preview" />
                 </ProjectPreview>
               </DetailsDivCer>
             ))}
           </ContentDivCer>
+
+          <Pagination>
+            {Array.from({ length: totalPages }, (_, i) => (
+              <button
+                key={i}
+                onClick={() => handlePageChange(i + 1)}
+                disabled={currentPage === i + 1}
+              >
+                {i + 1}
+              </button>
+            ))}
+          </Pagination>
         </Section>
       </Container>
       <Footer />
