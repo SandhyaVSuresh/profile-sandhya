@@ -3,6 +3,8 @@ import Footer from "./include/Footer";
 import Navbar from "./include/Navbar";
 import Spotlight from "./Spotlight";
 import Works from "./Works";
+import Skills from "./Skills";
+
 
 function Home() {
   return (
@@ -10,6 +12,7 @@ function Home() {
       <Navbar />
       <Spotlight />
       <Education />
+      <Skills />
       <Works />
       <Footer />
     </>

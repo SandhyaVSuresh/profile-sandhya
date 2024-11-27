@@ -2,6 +2,15 @@ import Footer from "./include/Footer";
 import Navbar from "./include/Navbar";
 import styled from "styled-components";
 import { useState } from "react";
+import bootstrap from "../assets/skillLogo/bootstrap.png"
+import css from "../assets/skillLogo/css3.png"
+import flask from "../assets/skillLogo/flask.png"
+import html5 from "../assets/skillLogo/html5.png"
+import python from "../assets/skillLogo/Python.png"
+import reactjs from "../assets/skillLogo/reactjs.png"
+import sass from "../assets/skillLogo/sass.png"
+import sql from "../assets/skillLogo/sql.png"
+
 
 const Container = styled.div`
   background-color: #fff;
@@ -166,7 +175,27 @@ const Skillli = styled.li`
   @media (max-width: 768px) {
     font-size: 1rem;
   }
+    
+  img {
+  position: absolute;
+    display: none;
+    width: 60px;
+    height: 60px;
+  }
+
+  &:hover {
+    color: transparent;
+    
+    img {
+      display: block;
+    }
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
+
 
 const ProjectPreview = styled.div`
   width: 40%;
@@ -301,15 +330,15 @@ const handlePageChange = (pageNumber) => {
             <Headh3>Skills</Headh3>
           </HeadingDiv>
           <ContentDiv>
-            <Skillul>
-              <Skillli>HTML</Skillli>
-              <Skillli>CSS</Skillli>
-              <Skillli>Bootstrap</Skillli>
-              <Skillli>React JS</Skillli>
-              <Skillli>SASS</Skillli>
-              <Skillli>SQL</Skillli>
-              <Skillli>Python</Skillli>
-              <Skillli>Flask</Skillli>
+          <Skillul>
+              <Skillli><img src={html5} alt="HTML" />HTML</Skillli>
+              <Skillli><img src={css} alt="HTML" />CSS</Skillli>
+              <Skillli><img src={bootstrap} alt="HTML" />Bootstrap</Skillli>
+              <Skillli><img src={reactjs} alt="HTML" />React JS</Skillli>
+              <Skillli><img src={sass} alt="HTML" />SASS</Skillli>
+              <Skillli><img src={sql} alt="HTML" />SQL</Skillli>
+              <Skillli><img src={python} alt="HTML" />Python</Skillli>
+              <Skillli><img src={flask} alt="HTML" />Flask</Skillli>
             </Skillul>
           </ContentDiv>
         </Section>
